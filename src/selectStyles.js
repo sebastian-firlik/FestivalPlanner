@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const theme = {
     rainbow: {
         palette: {
-            brand: '#5c56b6',
+            brand: '#095ac0',
         },
     },
 };
@@ -12,7 +12,7 @@ export const theme = {
 export const Subtitle = styled.h2`
   font-family: 'Lato Light';
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 1200;
   text-align: center;
   color: ${props => props.theme.rainbow.palette.text.header};
   ${props => props.uppercase && 'text-transform: uppercase;'}
@@ -27,6 +27,13 @@ export const StyledCard = styled(Card)`
 export const Title = styled.h1.attrs(props => props.theme.rainbow)`
   font-family: 'Lato Light';
   font-size: 32px;
+  text-align: center;
+  color: ${props => props.palette.text.main};
+`;
+
+export const TitleSmall = styled.h2.attrs(props => props.theme.rainbow)`
+  font-family: 'Lato Light';
+  font-size: 20px;
   text-align: center;
   color: ${props => props.palette.text.main};
 `;
