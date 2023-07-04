@@ -83,7 +83,7 @@ function App() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('http://127.0.0.1:5000/screenings');
+                const response = await fetch(process.env.LB_DNS+ '/api/screenings');
                 const data = await response.json();
                 const moviesList = [...new Map(data.map(item => [item['movie_id'], item])).values()].sort();
                 const daysList = Array.from(new Set(data.map((item) => item.day)));
@@ -177,7 +177,7 @@ function App() {
             }
 
         }
-        fetch('http://127.0.0.1:5000/schedule', {
+        fetch(process.env.LB_DNS+ '/api/schedule', {
             method: 'POST', headers: {
                 'Content-Type': 'application/json',
             }, body: JSON.stringify(resultsJson),
